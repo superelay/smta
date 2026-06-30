@@ -6,19 +6,103 @@ This repository distributes pre-compiled Debian packages (`.deb`) for easy deplo
 
 ---
 
-## 🚀 Key Features
+# 🚀 Key Features
 
-* **High-Performance epoll Inbound Engine**: Asynchronous, event-driven SMTP ingestion engine capable of accepting thousands of messages per second on a single CPU core.
-* **Lock-Free Logging & Webhooks**: Uses Multi-Producer Single-Consumer (MPSC) ring buffers for system access and delivery accounting logs, eliminating lock contention on the hot path.
-* **Zero-Copy Spooling**: Direct kernel-space zero-copy message spooling (`sendfile`) and block pre-allocation (`fallocate`) to bypass file system metadata bottlenecks.
-* **REST Transmissions API**: Inject messages securely using standard JSON payloads over HTTP/HTTPS on port `8081`.
-* **Virtual MTAs (VMTAs)**: Dynamic outbound IP mapping to cycle campaigns across dedicated sending IPs, with support for domain-specific smart-host overrides.
-* **Deliverability & Safety**:
-  * Outbound DKIM signing.
-  * Inbound SPF, DKIM, and Reverse PTR (iPrev) validation.
-  * SMTP AUTH brute-force rate-limiting.
-  * Adaptive outbound backoffs matching target MX SMTP responses.
+* **High-Performance epoll Inbound Engine** – Asynchronous, event-driven SMTP ingestion engine capable of accepting thousands of messages per second on a single CPU core.
 
+* **Lock-Free Logging & Webhooks** – Multi-Producer Single-Consumer (MPSC) ring buffers provide high-throughput access logging and delivery accounting without lock contention.
+
+* **Zero-Copy Spooling** – Direct kernel-space message spooling using `sendfile()` and `fallocate()` for maximum throughput and reduced filesystem overhead.
+
+* **REST Transmissions API** – Secure JSON-based HTTP/HTTPS API for high-speed application integrations.
+
+* **Virtual MTAs (VMTAs)** – Advanced outbound IP pool management with domain-based routing, smart-host overrides, and dedicated IP allocation.
+
+* **AI Mode (Intelligent Deliverability Engine)** – AI-powered automation that continuously monitors infrastructure health, optimizes routing decisions, performs automatic IP warming, and protects sender reputation.
+
+* **AI Copilot** – Built-in operational assistant that analyzes delivery statistics, detects anomalies, recommends configuration improvements, and assists administrators with troubleshooting, deliverability optimization, and infrastructure management.
+
+* **Automatic IP Warming** – Safely ramps traffic on new IP addresses using adaptive learning algorithms and reputation-aware sending schedules.
+
+* **Intelligent Traffic Routing** – Dynamically routes outbound mail through the healthiest Virtual MTAs based on reputation, provider feedback, queue load, and real-time delivery performance.
+
+* **Sender IP Health Monitoring** – Continuously evaluates every sending IP using SMTP responses, bounce rates, reputation metrics, blacklist status, throttling events, and delivery success rates.
+
+* **Sender Domain Health Monitoring** – Monitors sender domains for authentication status, reputation trends, DNS configuration, engagement quality, and overall deliverability health.
+
+* **Automatic Blacklist Detection** – Continuously checks outbound IPs against major DNSBL/RBL providers and automatically removes unhealthy IPs from active rotation.
+
+* **Automatic Suppression Engine** – Protects sender reputation by automatically suppressing recipients, domains, or campaigns when configurable bounce, complaint, or failure thresholds are exceeded.
+
+* **Threshold-Based Reputation Protection** – Configurable suppression rules based on bounce percentage, spam complaints, invalid recipients, hard failures, soft failures, engagement metrics, and provider-specific policies.
+
+* **Advanced Reporting & Analytics**
+
+  * Daily delivery reports
+  * Weekly delivery summaries
+  * Monthly volume reports
+  * Campaign performance analytics
+  * Queue performance reports
+  * Delivery success trends
+  * Domain-wise delivery statistics
+  * IP utilization reports
+
+* **Bounce Analytics**
+
+  * Hard bounce reports
+  * Soft bounce reports
+  * SMTP response analysis
+  * Bounce categorization
+  * Top failing recipient domains
+  * Historical bounce trends
+
+* **Web-Based Monitoring Portal**
+
+  * Real-time SMTP activity dashboard
+  * Live queue monitoring
+  * Active connection monitoring
+  * Delivery rate graphs
+  * Queue throughput visualization
+  * Virtual MTA health dashboard
+  * Sender IP health dashboard
+  * Sender domain health dashboard
+  * System alerts and notifications
+
+* **System Resource Monitoring**
+
+  * CPU utilization
+  * Memory consumption
+  * Disk usage
+  * Disk I/O performance
+  * Network throughput
+  * Open SMTP connections
+  * Queue depth
+  * Process health
+  * Service uptime
+  * Real-time performance metrics
+
+* **Deliverability & Security**
+
+  * Outbound DKIM signing
+  * Inbound SPF validation
+  * Inbound DKIM verification
+  * Reverse PTR (iPrev) validation
+  * SMTP AUTH brute-force protection
+  * Adaptive outbound backoff algorithms
+  * TLS support
+  * Authentication controls
+  * Reputation-aware outbound scheduling
+
+* **Enterprise Administration**
+
+  * Web-based administration portal
+  * Role-based user management
+  * Queue management
+  * Live log viewer
+  * REST management APIs
+  * Configuration reload without downtime
+  * Multi-server deployment support
+  * High-performance operational dashboards
 ---
 
 ## 📦 Installation (Debian/Ubuntu)
