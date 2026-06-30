@@ -39,13 +39,9 @@ This repository distributes pre-compiled Debian packages (`.deb`) for easy deplo
 * **Advanced Reporting & Analytics**
 
   * Daily delivery reports
-  * Weekly delivery summaries
   * Monthly volume reports
-  * Campaign performance analytics
-  * Queue performance reports
   * Delivery success trends
   * Domain-wise delivery statistics
-  * IP utilization reports
 
 * **Bounce Analytics**
 
@@ -66,7 +62,6 @@ This repository distributes pre-compiled Debian packages (`.deb`) for easy deplo
   * Virtual MTA health dashboard
   * Sender IP health dashboard
   * Sender domain health dashboard
-  * System alerts and notifications
 
 * **System Resource Monitoring**
 
@@ -76,8 +71,6 @@ This repository distributes pre-compiled Debian packages (`.deb`) for easy deplo
   * Disk I/O performance
   * Network throughput
   * Open SMTP connections
-  * Queue depth
-  * Process health
   * Service uptime
   * Real-time performance metrics
 
